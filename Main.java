@@ -24,7 +24,7 @@ public class Main {
         profile.setParameter(Profile.GUI, "true");
         ContainerController containerController = runtime.createMainContainer(profile);
 
-        AgentController controlPastureController;
+        AgentController pastureController;
 
         List<AgentController> farmerAgents;
 
@@ -32,14 +32,14 @@ public class Main {
 
 
         for(int i = 0; i < 20; i++){
-            AgentController agentController = containerController.createNewAgent("AirplaneAgent" + i , "agents.AirplaneAgent", launchAgents.createAirplaneArguments());
+            AgentController agentController = containerController.createNewAgent("FarmerAgent" + i , "agents.FarmerAgent", launchAgents.createFarmerArguments());
             airplaneAgents.add(agentController);
             agentController.start();
         }
 
-        controlTowerController = containerController.createNewAgent("ControlTowerAgent", "agents.ControlTowerAgent", launchAgents.createControlTowerArguments());
-        launchAgents.setControlTowerController(controlTowerController);
-        controlTowerController.start();
+        pastureController = containerController.createNewAgent("pastureController", "agents.PastureAgent", launchAgents.createPastureArguments());
+        launchAgents.setPastureController(pastureController);
+        pastureController.start();
 
 
 
