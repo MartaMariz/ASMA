@@ -29,7 +29,6 @@ public class Main {
 
         Object[] agentArgs = new Object[0];
         for(int i = 0; i < 3; i++){
-            //AgentController agentController = containerController.createNewAgent("FarmerAgent" + i , "agents.FarmerAgent", launchAgents.createFarmerArguments());
             AgentController agentController = containerController.createNewAgent("FarmerAgent" + i , "agents.FarmerAgent", agentArgs);
             farmerAgents.add(agentController);
             agentController.start();

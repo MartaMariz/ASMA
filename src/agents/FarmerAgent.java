@@ -52,8 +52,16 @@ public class FarmerAgent extends Agent {
             @Override
             protected void onTick() {
                 // Update the list of farmer agents
+                System.out.println("sending");
+
+                DFAgentDescription template = new DFAgentDescription();
+                //ServiceDescription sd = new ServiceDescription();
+                //sd.setType("farming");
+                template.addServices(sd);
+
+
                 try {
-                    DFAgentDescription[] result = DFService.search(myAgent, dfd);
+                    DFAgentDescription[] result = DFService.search(myAgent, template);
                     farmerAgents = new AID[result.length];
                     for (int i = 0; i < result.length; ++i) {
                         farmerAgents[i] = result[i].getName();
@@ -87,6 +95,8 @@ public class FarmerAgent extends Agent {
         private int repliesCnt = 0; // The counter of replies from seller agents
         private MessageTemplate mt;
         private int step = 0;
+        private int yesVotes = 0;
+        private int noVotes = 0;
 
         public void action() {
             ACLMessage msg = myAgent.receive();
@@ -113,22 +123,15 @@ public class FarmerAgent extends Agent {
                     ACLMessage reply = myAgent.receive(mt);
                     if (reply != null) {
                         // Reply received
-                /*
-                if (reply.getPerformative() == ACLMessage.PROPOSE) {
-                    // This is an offer
-
-                    int price = Integer.parseInt(reply.getContent());
-                    if (bestSeller == null || price < bestPrice) {
-                        // This is the best offer at present
-                        bestPrice = price;
-                        bestSeller = reply.getSender();
-                    }
-                }
-
-                 */
                         repliesCnt++;
+                        /*
+                        if (reply.getPerformative() == ACLMessage.CONFIRM) {
+                            repliesCnt++;
+                        }
+                         */
                         if (repliesCnt >= farmerAgents.length) {
                             // We received all replies
+                            repliesCnt = 0;
                             step = 2;
                         }
                     } else {
@@ -136,6 +139,47 @@ public class FarmerAgent extends Agent {
                     }
                     break;
                 case 2:
+                    // send msg to pasture asking for state
+                    step = 3;
+                    break;
+
+                case 3:
+                    ACLMessage proposal = new ACLMessage(ACLMessage.PROPOSE);
+                    for (int i = 0; i < farmerAgents.length; ++i) { //temos de dar acesso
+                        proposal.addReceiver(farmerAgents[i]);
+                    }
+                    proposal.setContent("vote");
+                    proposal.setConversationId("voting");
+                    proposal.setReplyWith("proposal" + System.currentTimeMillis()); // Unique value
+                    myAgent.send(proposal);
+                    break;
+                case 4:
+                    ACLMessage vote = myAgent.receive(mt);
+                    if (vote != null) {
+                        // Reply received
+                        repliesCnt++;
+
+                        if (vote.getPerformative() == ACLMessage.ACCEPT_PROPOSAL) {
+                            yesVotes++;
+                        }
+                        else if(vote.getPerformative() == ACLMessage.REJECT_PROPOSAL){
+                            noVotes++;
+                        }
+
+                        if (repliesCnt >= farmerAgents.length) {
+                            // We received all replies
+                            repliesCnt = 0;
+                            step = 5;
+                        }
+                    } else {
+                        block();
+                    }
+                    break;
+                case 5:
+                    // send msg to pasture saying result of voting
+                    step = 0;
+                    break;
+
             }
 
         }
