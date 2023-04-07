@@ -1,12 +1,15 @@
+package behaviours;
+
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
+import jade.lang.acl.ACLMessage;
 
 public class InitiateVoteBehaviour extends Behaviour {
     private int step = 0;
 
     public void action() {
         ACLMessage msg = myAgent.receive();
-        switch (step):
+        switch (step){
         case 0:
             // Send the cfp to all sellers
             ACLMessage cfp = new ACLMessage(ACLMessage.CFP);
@@ -53,5 +56,10 @@ public class InitiateVoteBehaviour extends Behaviour {
             }
             break;
         case 2:
+    }
+
+    @Override
+    public boolean done() {
+        return false;
     }
 }

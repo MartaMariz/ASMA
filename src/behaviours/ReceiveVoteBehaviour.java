@@ -1,7 +1,11 @@
+package behaviours;
+
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.CyclicBehaviour;
+import jade.lang.acl.ACLMessage;
 
-private class ReceiveVoteBehaviour extends CyclicBehaviour {
+public class ReceiveVoteBehaviour extends CyclicBehaviour {
     public void action() {
         ACLMessage msg = myAgent.receive();
         if (msg != null) {
