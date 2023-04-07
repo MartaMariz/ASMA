@@ -6,6 +6,7 @@ import jade.wrapper.ContainerController;
 import jade.wrapper.StaleProxyException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import agents.*;
 
@@ -24,7 +25,7 @@ public class Main {
 
         AgentController pastureController;
 
-        List<AgentController> farmerAgents = null;
+        List<AgentController> farmerAgents = new ArrayList();
 
         Object[] agentArgs = new Object[0];
         for(int i = 0; i < 3; i++){

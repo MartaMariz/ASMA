@@ -19,9 +19,7 @@ public class FarmerAgent extends Agent {
     // The list of known farmer agents
     private AID[] farmerAgents;
 
-    private enum Personality {greedy, cooperative, adaptive, regulated}
-
-    ;
+    private enum Personality {greedy, cooperative, adaptive, regulated};
 
     private int greed;
     private Map<Integer, Integer> cows;
@@ -35,7 +33,6 @@ public class FarmerAgent extends Agent {
 
 
     public void setup() {
-        System.out.println("Farmer agent " + getAID().getName() + " is ready.");
         this.greed = 1; //temporary
 
         // Register the book-selling service in the yellow pages
@@ -51,7 +48,7 @@ public class FarmerAgent extends Agent {
             fe.printStackTrace();
         }
 
-        addBehaviour(new TickerBehaviour(this, 60000 * (1 / greed)) {
+        this.addBehaviour(new TickerBehaviour(this, 6000 ) {
             @Override
             protected void onTick() {
                 // Update the list of farmer agents
@@ -68,6 +65,10 @@ public class FarmerAgent extends Agent {
 
             }
         });
+
+        this.addBehaviour(new ReceiveVoteBehaviour());
+
+        System.out.println("Farmer agent " + getAID().getName() + " is ready.");
 
     }
 

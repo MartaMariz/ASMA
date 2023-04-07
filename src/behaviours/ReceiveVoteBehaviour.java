@@ -9,6 +9,7 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
     public void action() {
         ACLMessage msg = myAgent.receive();
         if (msg != null) {
+            System.out.println("received message!");
             // Message received. Process it
             String proposal = msg.getContent();
             ACLMessage reply = msg.createReply();
