@@ -1,8 +1,9 @@
-package agents
+package agents;
 
 import jade.core.Agent;
-import behaviours.*
+import behaviours.*;
 import jade.core.AID;
+import java.lang.*;
 
 public class FarmerAgent extends Agent {
     // The list of known farmer agents
@@ -14,13 +15,16 @@ public class FarmerAgent extends Agent {
     private Map <Integer, Integer> cows;
     private Map<Integer, Integer> pastVotes;
 
+    /*
     public FarmerAgent(int greed){
         this.greed = greed;
     }
+     */
 
 
     public void setup() {
         System.out.println("Farmer agent "+getAID().getName()+" is ready.");
+        this.greed = 1; //temporary
 
         // Register the book-selling service in the yellow pages
         DFAgentDescription dfd = new DFAgentDescription();
@@ -36,7 +40,7 @@ public class FarmerAgent extends Agent {
             fe.printStackTrace();
         }
 
-        addBehaviour(new TickerBehaviour(this, 60000*greed) {
+        addBehaviour(new TickerBehaviour(this, 60000*(1/greed))) {
             protected void onTick() {
                 // Update the list of farmer agents
                 try {

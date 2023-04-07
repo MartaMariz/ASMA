@@ -1,4 +1,4 @@
-import agents.LaunchAgents;
+//import agents.LaunchAgents;
 import jade.core.Profile;
 import jade.core.ProfileImpl;
 import jade.core.Runtime;
@@ -28,17 +28,16 @@ public class Main {
 
         List<AgentController> farmerAgents;
 
-        airplaneAgents = launchAgents.getAirplaneAgents();
-
-
-        for(int i = 0; i < 20; i++){
-            AgentController agentController = containerController.createNewAgent("FarmerAgent" + i , "agents.FarmerAgent", launchAgents.createFarmerArguments());
-            airplaneAgents.add(agentController);
+        Object[] agentArgs = new Object[0];
+        for(int i = 0; i < 3; i++){
+            //AgentController agentController = containerController.createNewAgent("FarmerAgent" + i , "agents.FarmerAgent", launchAgents.createFarmerArguments());
+            AgentController agentController = containerController.createNewAgent("FarmerAgent" + i , "agents.FarmerAgent", agentArgs);
+            farmerAgents.add(agentController);
             agentController.start();
         }
 
-        pastureController = containerController.createNewAgent("pastureController", "agents.PastureAgent", launchAgents.createPastureArguments());
-        launchAgents.setPastureController(pastureController);
+        pastureController = containerController.createNewAgent("pastureController", "agents.PastureAgent", agentArgs);
+        //launchAgents.setPastureController(pastureController);
         pastureController.start();
 
 
