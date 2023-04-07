@@ -1,11 +1,9 @@
-//import agents.LaunchAgents;
 import jade.core.Profile;
 import jade.core.ProfileImpl;
 import jade.core.Runtime;
 import jade.wrapper.AgentController;
 import jade.wrapper.ContainerController;
 import jade.wrapper.StaleProxyException;
-import utils.Logger;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,8 +15,6 @@ public class Main {
 
     public static void main(String[] args) throws StaleProxyException, IOException {
 
-        LaunchAgents launchAgents = LaunchAgents.getInstance();
-        Logger.getInstance();
 
         Runtime runtime = Runtime.instance();
         Profile profile = new ProfileImpl();
@@ -28,7 +24,7 @@ public class Main {
 
         AgentController pastureController;
 
-        List<AgentController> farmerAgents;
+        List<AgentController> farmerAgents = null;
 
         Object[] agentArgs = new Object[0];
         for(int i = 0; i < 3; i++){

@@ -56,7 +56,7 @@ public class FarmerAgent extends Agent {
             protected void onTick() {
                 // Update the list of farmer agents
                 try {
-                    DFAgentDescription[] result = DFService.search(myAgent, fdf);
+                    DFAgentDescription[] result = DFService.search(myAgent, dfd);
                     farmerAgents = new AID[result.length];
                     for (int i = 0; i < result.length; ++i) {
                         farmerAgents[i] = result[i].getName();
@@ -83,6 +83,8 @@ public class FarmerAgent extends Agent {
 
 
     public class InitiateVoteBehaviour extends Behaviour {
+        private int repliesCnt = 0; // The counter of replies from seller agents
+        private MessageTemplate mt;
         private int step = 0;
 
         public void action() {
@@ -94,7 +96,7 @@ public class FarmerAgent extends Agent {
                     for (int i = 0; i < farmerAgents.length; ++i) { //temos de dar acesso
                         cfp.addReceiver(farmerAgents[i]);
                     }
-                    cfp.setContent();
+                    cfp.setContent("vote");
                     cfp.setConversationId("voting");
                     cfp.setReplyWith("cfp" + System.currentTimeMillis()); // Unique value
                     myAgent.send(cfp);
