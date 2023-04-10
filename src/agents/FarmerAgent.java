@@ -61,7 +61,9 @@ public class FarmerAgent extends Agent {
         noVotes = 0;
     }
 
-    public int getFarmers(){
+    public int getNumFarmers(){
+        if (farmerAgents == null)
+                return 0;
         return farmerAgents.length;
     }
 
@@ -80,8 +82,8 @@ public class FarmerAgent extends Agent {
         } catch (FIPAException fe) {
             fe.printStackTrace();
         }
-        int min = 6000;
-        int max = 20000;
+        int min = 10000;
+        int max = 60000;
         int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
 
         this.addBehaviour(new TickerBehaviour(this, random_int ) {

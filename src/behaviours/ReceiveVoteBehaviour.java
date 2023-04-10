@@ -33,6 +33,8 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
         //mt = MessageTemplate.MatchConversationId("voting");
         ACLMessage msg = myAgent.receive();
 
+        int decision = countVotes();
+
         if (msg != null) {
             System.out.println(myAgent.getName() + " received " + msg.getContent() + " from " + msg.getSender().getName());
             ACLMessage reply = msg.createReply();
@@ -60,5 +62,17 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
             block();
         }
 
+    }
+
+    private int countVotes() {
+        int yes = agent.getYesVotes();
+        int no = agent.getNoVotes();
+        if((yes + no) == agent.getNumFarmers() - 1 && agent.getNumFarmers() != 0){
+            System.out.println("All voted");
+            if (yes > no)
+                return 2;
+            else return 1;
+        }
+        else return 0;
     }
 }
