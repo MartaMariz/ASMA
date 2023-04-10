@@ -20,7 +20,9 @@ public class FarmerAgent extends Agent {
     // The list of known farmer agents
     private AID[] farmerAgents;
 
-    private enum Personality {greedy, cooperative, adaptive, regulated};
+    public enum Personality {greedy, cooperative, adaptive, regulated};
+
+    Personality personality;
 
     private int greed;
     private Map<Integer, Integer> cows;
@@ -35,7 +37,7 @@ public class FarmerAgent extends Agent {
 
     public void setup() {
         this.greed = 1; //temporary
-
+        this.personality = Personality.greedy;//should be parsed FIXME
         // Register the book-selling service in the yellow pages
         DFAgentDescription dfd = new DFAgentDescription();
         dfd.setName(getAID());
@@ -75,7 +77,7 @@ public class FarmerAgent extends Agent {
             }
         });
 
-        this.addBehaviour(new ReceiveVoteBehaviour());
+        this.addBehaviour(new ReceiveVoteBehaviour(this));
 
         System.out.println("Farmer agent " + getAID().getName() + " is ready.");
 
@@ -91,6 +93,9 @@ public class FarmerAgent extends Agent {
         }
     }
 
+    public Personality getPersonality(){
+        return this.personality;
+    }
 
 
     public class InitiateVoteBehaviour extends Behaviour {
@@ -114,7 +119,7 @@ public class FarmerAgent extends Agent {
                     cfp.setReplyWith("cfp" + System.currentTimeMillis()); // Unique value
                     myAgent.send(cfp);
                     // Prepare the template to get proposals
-                    mt = MessageTemplate.MatchConversationId("voting");
+                    mt = MessageTemplate.MatchConversationId("confirmation");
 
                     step = 1;
                     break;
@@ -123,19 +128,16 @@ public class FarmerAgent extends Agent {
                     // Receive all proposals/refusals from seller agents
                     ACLMessage reply = myAgent.receive(mt);
                     if (reply != null) {
-                        System.out.println("Yeah, I received something, it was " + reply.getPerformative());
-                        System.out.println();
-                        System.out.println("Currently my repliesCnt is " + repliesCnt);
                         // Reply received
                         //repliesCnt++;
-
                         if (reply.getPerformative() == ACLMessage.CONFIRM) {
                             repliesCnt++;
-                            System.out.println("I'm here");
+                            System.out.println("Current number of replies gotten " + repliesCnt);
                         }
 
-                        if (repliesCnt >= farmerAgents.length) {
+                        if (repliesCnt - 1 >= farmerAgents.length) {
                             // We received all replies
+                            System.out.println("received all replies");
                             repliesCnt = 0;
                             step = 2;
                         }
