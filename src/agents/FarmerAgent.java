@@ -4,6 +4,7 @@ import jade.core.Agent;
 import behaviours.*;
 import jade.core.AID;
 import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.TickerBehaviour;
 import jade.domain.DFService;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
@@ -19,11 +20,15 @@ public class FarmerAgent extends Agent {
     // The list of known farmer agents
     private AID[] farmerAgents;
 
-    private enum Personality {greedy, cooperative, adaptive, regulated};
+    public enum Personality {greedy, cooperative, adaptive, regulated};
+
+    Personality personality;
 
     private int greed;
     private Map<Integer, Integer> cows;
     private Map<Integer, Integer> pastVotes;
+
+    public ReceiveVoteBehaviour receiveBehaviour;
 
     /*
     public FarmerAgent(int greed){
@@ -34,7 +39,7 @@ public class FarmerAgent extends Agent {
 
     public void setup() {
         this.greed = 1; //temporary
-
+        this.personality = Personality.greedy;//should be parsed FIXME
         // Register the book-selling service in the yellow pages
         DFAgentDescription dfd = new DFAgentDescription();
         dfd.setName(getAID());
@@ -47,16 +52,17 @@ public class FarmerAgent extends Agent {
         } catch (FIPAException fe) {
             fe.printStackTrace();
         }
-
-        this.addBehaviour(new TickerBehaviour(this, 6000 ) {
+        int min = 5000;
+        int max = 15000;
+        int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
+        this.addBehaviour(new TickerBehaviour(this, random_int ) {
+        //this.addBehaviour(new TickerBehaviour(this, 6000 ) {
             @Override
             protected void onTick() {
                 // Update the list of farmer agents
                 System.out.println("sending");
 
                 DFAgentDescription template = new DFAgentDescription();
-                //ServiceDescription sd = new ServiceDescription();
-                //sd.setType("farming");
                 template.addServices(sd);
 
 
@@ -64,17 +70,17 @@ public class FarmerAgent extends Agent {
                     DFAgentDescription[] result = DFService.search(myAgent, template);
                     farmerAgents = new AID[result.length];
                     for (int i = 0; i < result.length; ++i) {
-                        farmerAgents[i] = result[i].getName();
+                        if(!result[i].getName().equals(myAgent.getName()))
+                            farmerAgents[i] = result[i].getName();
                     }
                 } catch (FIPAException fe) {
                     fe.printStackTrace();
                 }
                 myAgent.addBehaviour(new InitiateVoteBehaviour());
-
             }
         });
-
-        this.addBehaviour(new ReceiveVoteBehaviour());
+        receiveBehaviour = new ReceiveVoteBehaviour(this);
+        this.addBehaviour(receiveBehaviour);
 
         System.out.println("Farmer agent " + getAID().getName() + " is ready.");
 
@@ -90,6 +96,14 @@ public class FarmerAgent extends Agent {
         }
     }
 
+    public Personality getPersonality(){
+        return this.personality;
+    }
+
+    public void removeBehaviour(){
+        this.removeBehaviour(receiveBehaviour);
+    }
+
 
     public class InitiateVoteBehaviour extends Behaviour {
         private int repliesCnt = 0; // The counter of replies from seller agents
@@ -102,35 +116,40 @@ public class FarmerAgent extends Agent {
             ACLMessage msg = myAgent.receive();
             switch (step) {
                 case 0:
+                    //removeBehaviour(receiveBehaviour);
                     // Send the cfp to all sellers
+
                     ACLMessage cfp = new ACLMessage(ACLMessage.CFP);
                     for (int i = 0; i < farmerAgents.length; ++i) { //temos de dar acesso
                         cfp.addReceiver(farmerAgents[i]);
                     }
-                    cfp.setContent("vote");
+                    cfp.setContent("confirmation");
                     cfp.setConversationId("voting");
-                    cfp.setReplyWith("cfp" + System.currentTimeMillis()); // Unique value
+                    //cfp.setReplyWith("cfp" + System.currentTimeMillis()); // Unique value
                     myAgent.send(cfp);
                     // Prepare the template to get proposals
-                    mt = MessageTemplate.and(MessageTemplate.MatchConversationId("book-trade"),
-                            MessageTemplate.MatchInReplyTo(cfp.getReplyWith()));
+                    mt = MessageTemplate.MatchConversationId("confirmation");
+                    //mt = MessageTemplate.and(MessageTemplate.MatchConversationId("confirmation"),
+                    //                        MessageTemplate.MatchInReplyTo(cfp.getReplyWith()));
 
                     step = 1;
                     break;
 
                 case 1:
-                    // Receive all proposals/refusals from seller agents
+                    // Receive all proposals/refusals from agents
                     ACLMessage reply = myAgent.receive(mt);
                     if (reply != null) {
+                        System.out.println(myAgent.getName() + "received msg" + reply.getContent() + "from" + reply.getSender()  );
                         // Reply received
-                        repliesCnt++;
-                        /*
+                        //repliesCnt++;
                         if (reply.getPerformative() == ACLMessage.CONFIRM) {
                             repliesCnt++;
+                            System.out.println("Current number of replies gotten " + repliesCnt);
                         }
-                         */
-                        if (repliesCnt >= farmerAgents.length) {
+
+                        if (repliesCnt - 1 >= farmerAgents.length) {
                             // We received all replies
+                            System.out.println("received all replies");
                             repliesCnt = 0;
                             step = 2;
                         }
