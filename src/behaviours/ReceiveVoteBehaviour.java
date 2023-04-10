@@ -30,43 +30,31 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
     }
 
     public void action() {
-        mt = MessageTemplate.MatchConversationId("voting");
-        ACLMessage msg = myAgent.receive(mt);
+        //mt = MessageTemplate.MatchConversationId("voting");
+        ACLMessage msg = myAgent.receive();
 
-        if (msg != null){
+        if (msg != null) {
             System.out.println(myAgent.getName() + " received " + msg.getContent() + " from " + msg.getSender().getName());
-            switch (msg.getContent()){
-                case "confirmation":
-                    /*
-                    ACLMessage confirmation = new ACLMessage(ACLMessage.CONFIRM);
-                    System.out.println("Sending a confirmation message");
-                    confirmation.addReceiver(msg.getSender());
-                    confirmation.setContent("confirming");
-                    confirmation.setConversationId("confirmation");
-                    myAgent.send(confirmation);
-                     */
-                    ACLMessage confirmation = msg.createReply();
-                    confirmation.setPerformative(ACLMessage.CONFIRM);
-                    confirmation.setContent("confirming");
-                    myAgent.send(confirmation);
+            ACLMessage reply = msg.createReply();
 
-                    break;
+            if (msg.getPerformative() == ACLMessage.PROPOSE) {
+                String vote = this.handleVote(agent.getPersonality());
 
-                case "vote":
-                    ACLMessage proposal = new ACLMessage(ACLMessage.PROPOSE);
+                if(vote.equals("yes"))
+                    reply.setPerformative(ACLMessage.ACCEPT_PROPOSAL);
+                else
+                    reply.setPerformative(ACLMessage.REJECT_PROPOSAL);
 
-                    String answer = handleVote(this.agent.getPersonality());
-
-
-                    proposal.addReceiver(msg.getSender());
-                    proposal.setContent(answer);
-                    proposal.setConversationId("voting-answer");
-                    System.out.println("Voting propose ongoing! Sent a " + answer + " answer back");
-                    myAgent.send(proposal);
-                    break;
-                default:
-                    break;
+                reply.setContent(vote);
+                myAgent.send(reply);
             }
+            else if (msg.getPerformative() == ACLMessage.ACCEPT_PROPOSAL){
+                agent.voteYes();
+            }
+            else if (msg.getPerformative() == ACLMessage.REJECT_PROPOSAL){
+                agent.voteNo();
+            }
+            msg = null;
         }
         else{
             block();
