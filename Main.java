@@ -1,22 +1,21 @@
-import agents.LaunchAgents;
 import jade.core.Profile;
 import jade.core.ProfileImpl;
 import jade.core.Runtime;
 import jade.wrapper.AgentController;
 import jade.wrapper.ContainerController;
 import jade.wrapper.StaleProxyException;
-import utils.Logger;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import agents.*;
+
 
 
 public class Main {
 
     public static void main(String[] args) throws StaleProxyException, IOException {
 
-        LaunchAgents launchAgents = LaunchAgents.getInstance();
-        Logger.getInstance();
 
         Runtime runtime = Runtime.instance();
         Profile profile = new ProfileImpl();
@@ -26,19 +25,17 @@ public class Main {
 
         AgentController pastureController;
 
-        List<AgentController> farmerAgents;
+        List<AgentController> farmerAgents = new ArrayList();
 
-        airplaneAgents = launchAgents.getAirplaneAgents();
-
-
-        for(int i = 0; i < 20; i++){
-            AgentController agentController = containerController.createNewAgent("FarmerAgent" + i , "agents.FarmerAgent", launchAgents.createFarmerArguments());
-            airplaneAgents.add(agentController);
+        Object[] agentArgs = new Object[0];
+        for(int i = 0; i < 3; i++){
+            AgentController agentController = containerController.createNewAgent("FarmerAgent" + i , "agents.FarmerAgent", agentArgs);
+            farmerAgents.add(agentController);
             agentController.start();
         }
 
-        pastureController = containerController.createNewAgent("pastureController", "agents.PastureAgent", launchAgents.createPastureArguments());
-        launchAgents.setPastureController(pastureController);
+        pastureController = containerController.createNewAgent("pastureController", "agents.PastureAgent", agentArgs);
+        //launchAgents.setPastureController(pastureController);
         pastureController.start();
 
 

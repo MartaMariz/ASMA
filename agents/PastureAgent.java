@@ -1,6 +1,8 @@
-package agents
+package agents;
 
 import jade.core.Agent;
+import behaviours.*;
+
 public class PastureAgent extends Agent {
     private int health;
     private int regenerationRate;
