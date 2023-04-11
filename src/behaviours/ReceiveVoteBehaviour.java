@@ -1,12 +1,17 @@
-package behaviours;
+package src.behaviours;
 
-import agents.FarmerAgent;
+import jade.domain.DFService;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.domain.FIPAException;
+import src.agents.FarmerAgent;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
+import src.agents.FarmerAgent;
 
 public class ReceiveVoteBehaviour extends CyclicBehaviour {
     private final FarmerAgent agent;
@@ -35,6 +40,36 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
         ACLMessage msg = myAgent.receive();
 
         int decision = countVotes();
+        System.out.println(decision);
+
+        if(decision > 0){
+            System.out.println("cow approved sending inform to pasture of new cow ");
+            //mandar decisão ao pasto
+            DFAgentDescription pasture_template = new DFAgentDescription();
+            ServiceDescription sd = new ServiceDescription();
+            sd.setType("provide-info");
+            pasture_template.addServices(sd);
+
+            try {
+                DFAgentDescription[] result = DFService.search(myAgent, pasture_template);
+                if (result.length > 0) {
+                    AID agentID = result[0].getName();
+                    System.out.println("Found agent " + agentID.getLocalName() + " using Yellow Pages");
+
+                    // Send a message to the registered agent
+                    // Here we are assuming that the registered agent has a behaviour that can handle this message
+                    ACLMessage inform_new_cow = new ACLMessage(ACLMessage.INFORM);
+                    inform_new_cow.addReceiver(agentID);
+                    inform_new_cow.setContent("New cow!!");
+                    agent.send(inform_new_cow);
+                    agent.resetVotes();
+                } else {
+                    System.out.println("No agents found");
+                }
+            } catch (FIPAException e) {
+                e.printStackTrace();
+            }
+        }
 
         if (msg != null) {
             System.out.println(myAgent.getName() + " received " + msg.getContent() + " from " + msg.getSender().getName());
@@ -52,6 +87,7 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
                 myAgent.send(reply);
             }
             else if (msg.getPerformative() == ACLMessage.INFORM){
+                //message.getcontent() receber info dar parse
                 System.out.println(myAgent.getName()+" is starting vote");
                 ACLMessage proposal = new ACLMessage(ACLMessage.PROPOSE);
                 AID[] farmerAgents = agent.getFarmerAgents();
@@ -70,6 +106,7 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
                 agent.voteNo();
             }
             msg = null;
+
         }
         else{
             block();
@@ -80,12 +117,14 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
     private int countVotes() {
         int yes = agent.getYesVotes();
         int no = agent.getNoVotes();
+        int res;
         if((yes + no) == agent.getNumFarmers() - 1 && agent.getNumFarmers() != 0){
             System.out.println("All voted");
             if (yes > no)
-                return 2;
-            else return 1;
+                res = 2;
+            else res = 1;
         }
-        else return 0;
+        else res = 0;
+        return res;
     }
 }

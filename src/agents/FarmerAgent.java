@@ -1,7 +1,7 @@
-package agents;
+package src.agents;
 
 import jade.core.Agent;
-import behaviours.*;
+
 import jade.core.AID;
 import jade.core.behaviours.Behaviour;
 import jade.core.behaviours.CyclicBehaviour;
@@ -12,6 +12,7 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
+import src.behaviours.ReceiveVoteBehaviour;
 
 import java.lang.*;
 import java.util.Map;
@@ -90,16 +91,12 @@ public class FarmerAgent extends Agent {
         int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
 
         this.addBehaviour(new TickerBehaviour(this, random_int ) {
-        //this.addBehaviour(new TickerBehaviour(this, 6000 ) {
             @Override
             protected void onTick() {
                 // Update the list of farmer agents
-                resetVotes();
 
                 DFAgentDescription template = new DFAgentDescription();
                 template.addServices(sd);
-
-
                 try {
                     DFAgentDescription[] result = DFService.search(myAgent, template);
                     farmerAgents = new AID[result.length];
@@ -110,17 +107,55 @@ public class FarmerAgent extends Agent {
                 } catch (FIPAException fe) {
                     fe.printStackTrace();
                 }
+                DFAgentDescription pasture_template = new DFAgentDescription();
+                ServiceDescription sd_pasture = new ServiceDescription();
+                sd_pasture.setType("provide-info");
+                pasture_template.addServices(sd_pasture);
 
-                System.out.println(myAgent.getName()+" is asking pasture vote");
-                ACLMessage proposal = new ACLMessage(ACLMessage.REQUEST);
-                // ir buscar pasto
-                //propsal.addReceiver()
-                proposal.setContent("vote");
-                proposal.setConversationId("voting");
-                proposal.setReplyWith("proposal" + System.currentTimeMillis()); // Unique value
-                myAgent.send(proposal);
-            }
-        });
+                try {
+                    DFAgentDescription[] result = DFService.search(myAgent, pasture_template);
+                    if (result.length > 0) {
+                        AID agentID = result[0].getName();
+                        System.out.println( myAgent.getName() + " Found agent " + agentID.getName() + " using Yellow Pages");
+
+                        // Send a message to the registered agent
+                        // Here we are assuming that the registered agent has a behaviour that can handle this message
+                        ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
+                        msg.addReceiver(agentID);
+                        msg.setReplyWith("pasture info" + System.currentTimeMillis()); // Unique value
+                        msg.setContent("Hello pasture from AnotherAgent");
+                        System.out.println("sending " + msg + " to " + agentID);
+                        myAgent.send(msg);
+                    } else {
+                        System.out.println("No agents found");
+                    }
+                } catch (FIPAException e) {
+                    e.printStackTrace();
+                }
+
+//not recieving pasture info
+                ACLMessage msg = myAgent.receive();
+
+                if (msg != null){
+                    System.out.println(myAgent.getName() + " received " + msg.getContent() + " from " + msg.getSender().getName());
+                    ACLMessage reply = msg.createReply();
+
+                    if(msg.getPerformative() == ACLMessage.INFORM) {
+                        System.out.println(myAgent.getName()+" is asking pasture vote");
+                        ACLMessage proposal = new ACLMessage(ACLMessage.REQUEST);
+                        // ir buscar pasto
+                        for (int i = 0; i < farmerAgents.length; i++){
+                            proposal.addReceiver(farmerAgents[i]);
+                        }
+                        proposal.setContent("vote");
+                        proposal.setConversationId("voting");
+                        proposal.setReplyWith("proposal" + System.currentTimeMillis()); // Unique value
+                        myAgent.send(proposal);
+                    }
+                }
+
+
+        }});
         receiveBehaviour = new ReceiveVoteBehaviour(this);
         this.addBehaviour(receiveBehaviour);
 
