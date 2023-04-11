@@ -40,11 +40,12 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
         ACLMessage msg = myAgent.receive();
 
         int decision = countVotes();
-        System.out.println(decision);
-
         if(decision > 0){
+            agent.resetVotes();
+        }
+        if(decision == 2){
             System.out.println("cow approved sending inform to pasture of new cow ");
-            //mandar decisão ao pasto
+            //sending request for new cow to pasture
             DFAgentDescription pasture_template = new DFAgentDescription();
             ServiceDescription sd = new ServiceDescription();
             sd.setType("provide-info");
@@ -60,9 +61,9 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
                     // Here we are assuming that the registered agent has a behaviour that can handle this message
                     ACLMessage inform_new_cow = new ACLMessage(ACLMessage.INFORM);
                     inform_new_cow.addReceiver(agentID);
-                    inform_new_cow.setContent("New cow!!");
+                    int id = this.agent.addCow();
+                    inform_new_cow.setContent("cow:" + id);
                     agent.send(inform_new_cow);
-                    agent.resetVotes();
                 } else {
                     System.out.println("No agents found");
                 }

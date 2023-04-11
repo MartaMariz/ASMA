@@ -29,7 +29,7 @@ public class FarmerAgent extends Agent {
     private int noVotes = 0;
 
     private int greed;
-    private Map<Integer, Integer> cows;
+    private Map<String, Integer> cows;
     private Map<Integer, Integer> pastVotes;
 
     private int flag = 1;
@@ -55,6 +55,11 @@ public class FarmerAgent extends Agent {
 
     public int getNoVotes(){
         return noVotes;
+    }
+
+    public int addCow(){
+
+        return 0;
     }
 
     public void resetVotes(){
