@@ -1,6 +1,7 @@
 package behaviours;
 
 import agents.FarmerAgent;
+import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
 import jade.core.behaviours.CyclicBehaviour;
@@ -49,6 +50,18 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
 
                 reply.setContent(vote);
                 myAgent.send(reply);
+            }
+            else if (msg.getPerformative() == ACLMessage.INFORM){
+                System.out.println(myAgent.getName()+" is starting vote");
+                ACLMessage proposal = new ACLMessage(ACLMessage.PROPOSE);
+                AID[] farmerAgents = agent.getFarmerAgents();
+                for (int i = 0; i < farmerAgents.length; ++i) {
+                    proposal.addReceiver(farmerAgents[i]);
+                }
+                proposal.setContent("vote");
+                proposal.setConversationId("voting");
+                proposal.setReplyWith("proposal" + System.currentTimeMillis()); // Unique value
+                myAgent.send(proposal);
             }
             else if (msg.getPerformative() == ACLMessage.ACCEPT_PROPOSAL){
                 agent.voteYes();

@@ -67,6 +67,9 @@ public class FarmerAgent extends Agent {
         return farmerAgents.length;
     }
 
+    public AID[] getFarmerAgents() {
+        return this.farmerAgents;
+    }
 
     public void setup() {
         this.personality = Personality.greedy;//should be parsed FIXME
@@ -108,11 +111,10 @@ public class FarmerAgent extends Agent {
                     fe.printStackTrace();
                 }
 
-                System.out.println(myAgent.getName()+" is starting vote");
-                ACLMessage proposal = new ACLMessage(ACLMessage.PROPOSE);
-                for (int i = 0; i < farmerAgents.length; ++i) {
-                    proposal.addReceiver(farmerAgents[i]);
-                }
+                System.out.println(myAgent.getName()+" is asking pasture vote");
+                ACLMessage proposal = new ACLMessage(ACLMessage.REQUEST);
+                // ir buscar pasto
+                //propsal.addReceiver()
                 proposal.setContent("vote");
                 proposal.setConversationId("voting");
                 proposal.setReplyWith("proposal" + System.currentTimeMillis()); // Unique value

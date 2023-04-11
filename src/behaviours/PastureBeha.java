@@ -8,25 +8,23 @@ import jade.lang.acl.ACLMessage;
 public class PastureBeha extends CyclicBehaviour {
     public void action() {
         ACLMessage msg = myAgent.receive();
+
+
         if (msg != null) {
-            // Message received. Process it
-            String proposal = msg.getContent();
+            System.out.println(myAgent.getName() + " received " + msg.getContent() + " from " + msg.getSender().getName());
             ACLMessage reply = msg.createReply();
-                /*Integer price = (Integer) catalogue.get(title);
-                if (price != null) {
-                    // The requested book is available for sale. Reply with the price
-                    reply.setPerformative(ACLMessage.PROPOSE);
-                    reply.setContent(String.valueOf(price.intValue()));
-                }
-                else {
-                    // The requested book is NOT available for sale.
-                    reply.setPerformative(ACLMessage.REFUSE);
-                    reply.setContent(“not-available”);
-                }
-                 */
-            myAgent.send(reply);
+
+            if (msg.getPerformative() == ACLMessage.REQUEST) {
+                reply.setPerformative(ACLMessage.INFORM);
+                reply.setContent("");
+                myAgent.send(reply);
+            }
+
+            if (msg.getPerformative() == ACLMessage.PROPAGATE) {
+                // por ou nao vaca no pasto
+            }
         }
-        else {
+        else{
             block();
         }
     }
