@@ -26,10 +26,12 @@ public class PastureAgent extends Agent {
 
     public void setup() {
         System.out.println("Hello world!");
-        //FIXME
-        this.health = 100.0f;
-        this.regenerationRate = 2.0f;
-        this.decreaseFactor = 1.5f;
+        Object[] args = this.getArguments();
+        this.health = (float) args[0];
+        this.regenerationRate = (float) args[1];
+        this.decreaseFactor = (float) args[2];
+        int pastureTickerTime = (int) args[3];
+        int cowsHealthTicker = (int) args[4];
 
         // Register the agent with the Yellow Pages service
         DFAgentDescription dfd = new DFAgentDescription();
@@ -50,12 +52,19 @@ public class PastureAgent extends Agent {
         // Add agent behaviours here
         addBehaviour(new PastureBehaviour(this));
 
-        int tickerTime = 6000;
-        addBehaviour(new TickerBehaviour(this, tickerTime) {
+
+        addBehaviour(new TickerBehaviour(this, pastureTickerTime) {
             @Override
             protected void onTick() {
                 updatePastureHealth();
                 System.out.println("Current Pasture Health: " + getPastureHealth());
+            }
+        });
+
+        addBehaviour(new TickerBehaviour(this, cowsHealthTicker) {
+            @Override
+            protected void onTick() {
+                updateCowHealth();
             }
         });
     }
@@ -73,8 +82,13 @@ public class PastureAgent extends Agent {
 
     public void updatePastureHealth(){
         float toDecrease = this.decreaseFactor * this.cowNumber;
-        System.out.println("toDecrease " + toDecrease);
-        System.out.println("Decreasing " + (regenerationRate - toDecrease));
+        System.out.println("Current pasture update value :" + (regenerationRate - toDecrease));
         this.health += regenerationRate - toDecrease;
+    }
+
+    public void updateCowHealth() {
+        if(this.cowNumber <= 0)
+            return;
+        this.cowNumber--;
     }
 }

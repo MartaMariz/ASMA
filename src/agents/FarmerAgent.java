@@ -78,7 +78,9 @@ public class FarmerAgent extends Agent {
     }
 
     public void setup() {
-        this.personality = Personality.greedy;//should be parsed FIXME
+        Object[] args = this.getArguments();
+        this.personality = (Personality) args[0];
+
         // Register the book-selling service in the yellow pages
         DFAgentDescription dfd = new DFAgentDescription();
         dfd.setName(getAID());
@@ -95,7 +97,7 @@ public class FarmerAgent extends Agent {
         int max = 60000;
         int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
 
-        this.addBehaviour(new TickerBehaviour(this, random_int ) {
+        this.addBehaviour(new TickerBehaviour(this, 6000 ) {
             @Override
             protected void onTick() {
                 // Update the list of farmer agents
