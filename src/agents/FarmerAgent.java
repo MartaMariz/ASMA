@@ -129,7 +129,6 @@ public class FarmerAgent extends Agent {
                         msg.addReceiver(agentID);
                         msg.setReplyWith("pasture info" + System.currentTimeMillis()); // Unique value
                         msg.setContent("Hello pasture from AnotherAgent");
-                        System.out.println("sending " + msg + " to " + agentID);
                         myAgent.send(msg);
                     } else {
                         System.out.println("No agents found");
@@ -138,7 +137,7 @@ public class FarmerAgent extends Agent {
                     e.printStackTrace();
                 }
 
-//not recieving pasture info
+
                 ACLMessage msg = myAgent.receive();
 
                 if (msg != null){

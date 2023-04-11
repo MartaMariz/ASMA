@@ -21,7 +21,7 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
         this.agent = (FarmerAgent) a;
     }
 
-    public String handleVote(FarmerAgent.Personality personality){
+    public String handleVote(FarmerAgent.Personality personality, int health, int cowNum){
         double score = Math.random();
         boolean value = false;
         switch(personality){
@@ -77,7 +77,8 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
             ACLMessage reply = msg.createReply();
 
             if (msg.getPerformative() == ACLMessage.PROPOSE) {
-                String vote = this.handleVote(agent.getPersonality());
+                String[] tokens  = msg.getContent().split("-");
+                String vote = this.handleVote(agent.getPersonality(), Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
 
                 if(vote.equals("yes"))
                     reply.setPerformative(ACLMessage.ACCEPT_PROPOSAL);
@@ -88,15 +89,16 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
                 myAgent.send(reply);
             }
             else if (msg.getPerformative() == ACLMessage.INFORM){
-                //message.getcontent() receber info dar parse
+                String[] tokens  = msg.getContent().split("-");
+
                 System.out.println(myAgent.getName()+" is starting vote");
                 ACLMessage proposal = new ACLMessage(ACLMessage.PROPOSE);
                 AID[] farmerAgents = agent.getFarmerAgents();
                 for (int i = 0; i < farmerAgents.length; ++i) {
                     proposal.addReceiver(farmerAgents[i]);
                 }
-                proposal.setContent("vote");
-                proposal.setConversationId("voting");
+                proposal.setContent("vote" + msg.getContent());
+                proposal.setConversationId("voting-" + tokens[1] + "-" + tokens[2]);
                 proposal.setReplyWith("proposal" + System.currentTimeMillis()); // Unique value
                 myAgent.send(proposal);
             }

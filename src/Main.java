@@ -34,12 +34,11 @@ public class Main {
             farmerAgents.add(agentController);
             agentController.start();
         }
-
+        agentArgs = new Object[]{5, 1};
         pastureController = containerController.createNewAgent("pastureController", "src.agents.PastureAgent", agentArgs);
         //launchAgents.setPastureController(pastureController);
 
         pastureController.start();
-
 
 
     }

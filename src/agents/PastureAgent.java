@@ -9,10 +9,18 @@ import jade.domain.FIPAException;
 import src.behaviours.PastureBehaviour;
 
 public class PastureAgent extends Agent {
+
     private static final String AGENT_NAME = "PASTURE";
     private int health;
-    private int regenerationRate;
+    private float regenerationRate;
     private int cowNumber;
+
+    public PastureAgent(int health, float regenerationRate){
+        this.health = health;
+        this.regenerationRate = regenerationRate;
+        this.cowNumber = 0;
+    }
+    public PastureAgent(){}
 
 
     public void setup() {
@@ -37,7 +45,13 @@ public class PastureAgent extends Agent {
         // Add agent behaviours here
         addBehaviour(new PastureBehaviour(this));
     }
+    public int getPastureHealth(){
+        return this.health;
+    }
 
+    public int getCowNumber(){
+        return this.cowNumber;
+    }
     public void addCow(){
         this.cowNumber ++;
         System.out.println("New number of cows " + this.cowNumber);

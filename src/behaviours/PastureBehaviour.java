@@ -22,15 +22,12 @@ public class PastureBehaviour extends CyclicBehaviour {
             ACLMessage reply = msg.createReply();
 
             if (msg.getPerformative() == ACLMessage.REQUEST) {
-                System.out.println("pasture recieves request");
                 reply.setPerformative(ACLMessage.INFORM);
-                reply.setContent("bue bom pasto");//info sobre o estado do pasture que depois se dá parse do outro lado
+                reply.setContent("pasture status-" + this.agent.getPastureHealth() + "-" + this.agent.getCowNumber());
                 this.agent.send(reply);
             }
 
-            // ver acl messages
-            if (msg.getPerformative() == ACLMessage.INFORM) { //answer from farmer
-                // por ou nao vaca no pasto
+            if (msg.getPerformative() == ACLMessage.INFORM) {
                 System.out.println(msg.getContent());
                 this.agent.addCow();
             }
