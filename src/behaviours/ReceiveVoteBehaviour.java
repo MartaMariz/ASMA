@@ -21,16 +21,24 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
         this.agent = (FarmerAgent) a;
     }
 
-    public String handleVote(FarmerAgent.Personality personality, int health, int cowNum){
+    public String handleVote(FarmerAgent.Personality personality, float health, int cowNum){
         double score = Math.random();
-        boolean value = false;
+        boolean value;
         switch(personality){
             case greedy:
+                value = score < 0.9;
+                break;
             case adaptive:
+                value = score < 0.7;
+                break;
             case regulated:
-            case cooperative:
-            default:
                 value = score < 0.5;
+                break;
+            case cooperative:
+                value = score < 0.3;
+                break;
+            default:
+                value = score < 0;
         }
         return value ? "yes" : "no";
     }
@@ -78,7 +86,7 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
 
             if (msg.getPerformative() == ACLMessage.PROPOSE) {
                 String[] tokens  = msg.getContent().split("-");
-                String vote = this.handleVote(agent.getPersonality(), Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
+                String vote = this.handleVote(agent.getPersonality(), Float.parseFloat(tokens[1]), Integer.parseInt(tokens[2]));
 
                 if(vote.equals("yes"))
                     reply.setPerformative(ACLMessage.ACCEPT_PROPOSAL);

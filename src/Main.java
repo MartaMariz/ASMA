@@ -6,16 +6,17 @@ import jade.core.Runtime;
 import jade.wrapper.AgentController;
 import jade.wrapper.ContainerController;
 import jade.wrapper.StaleProxyException;
+import src.agents.LaunchAgents;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class Main {
 
     public static void main(String[] args) throws StaleProxyException, IOException {
+
 
 
         Runtime runtime = Runtime.instance();
@@ -27,18 +28,20 @@ public class Main {
         AgentController pastureController;
 
         List<AgentController> farmerAgents = new ArrayList();
+        LaunchAgents launchAgents = new LaunchAgents();
+        Object[] farmerArgs = launchAgents.createAgentArguments();
 
         Object[] agentArgs = new Object[0];
         for(int i = 0; i < 3; i++){
-            AgentController agentController = containerController.createNewAgent("FarmerAgent" + i , "src.agents.FarmerAgent", agentArgs);
+            AgentController agentController = containerController.createNewAgent("FarmerAgent" + i , "src.agents.FarmerAgent", farmerArgs);
             farmerAgents.add(agentController);
             agentController.start();
         }
-        agentArgs = new Object[]{5, 1};
+
         pastureController = containerController.createNewAgent("pastureController", "src.agents.PastureAgent", agentArgs);
         //launchAgents.setPastureController(pastureController);
-
         pastureController.start();
+
 
 
     }
