@@ -84,7 +84,7 @@ public class FarmerAgent extends Agent {
         int max = 60000;
         int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
 
-        this.addBehaviour(new TickerBehaviour(this, 6000 ) {
+        this.addBehaviour(new TickerBehaviour(this, random_int ) {
             //this.addBehaviour(new TickerBehaviour(this, 6000 ) {
             @Override
             protected void onTick() {
