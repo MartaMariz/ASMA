@@ -23,13 +23,13 @@ public class PastureBehaviour extends CyclicBehaviour {
 
             if (msg.getPerformative() == ACLMessage.REQUEST) {
                 reply.setPerformative(ACLMessage.INFORM);
-                reply.setContent("pasture status/" + this.agent.getPastureHealth() + "/" + this.agent.getCowNumber());
+                reply.setContent("pasture status/" + this.agent.getPastureHealth() + "/" + this.agent.getCowNumber() + "/" + this.agent.getTotalCowsByFarmer(msg.getSender().getName()));
                 this.agent.send(reply);
             }
 
             if (msg.getPerformative() == ACLMessage.INFORM) {
                 System.out.println(msg.getContent());
-                this.agent.addCow();
+                this.agent.addCow(msg.getSender().getName());
             }
         }
         else{
