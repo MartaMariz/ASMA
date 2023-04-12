@@ -9,6 +9,8 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
 import src.behaviours.PastureBehaviour;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class PastureAgent extends Agent {
@@ -39,6 +41,7 @@ public class PastureAgent extends Agent {
         int cowsHealthTicker = (int) args[4];
         this.cowDict = new Hashtable<String, List<Cow>>();
 
+
         // Register the agent with the Yellow Pages service
         DFAgentDescription dfd = new DFAgentDescription();
         dfd.setName(getAID());
@@ -63,7 +66,24 @@ public class PastureAgent extends Agent {
             @Override
             protected void onTick() {
                 updatePastureHealth();
-                System.out.println("Current Pasture Health: " + getPastureHealth());
+                try {
+                    FileWriter writer = new FileWriter("output.txt", true);
+                    writer.write("Current Pasture Health: " + getPastureHealth() + "\n");
+                    System.out.println("Current Pasture Health: " + getPastureHealth() + "\n");
+                    for (Map.Entry<String, List<Cow>> entry : cowDict.entrySet()) {
+                        String farmer = entry.getKey();
+                        List<Cow> cowList = entry.getValue();
+                        writer.write("Cows for farmer " + farmer + ":\n");
+                        System.out.println("Cows for farmer " + farmer + ":\n");
+                        for (Cow cow : cowList) {
+                            writer.write(cow.toString() + "\n");
+                            System.out.println(cow.toString() + "\n");
+                        }
+                    }
+                    writer.close();
+                } catch (IOException e) {
+                    System.err.println("Error writing to file: " + e.getMessage());
+                }
             }
         });
 
@@ -99,6 +119,9 @@ public class PastureAgent extends Agent {
         float toDecrease = this.decreaseFactor * this.getCowNumber();
         System.out.println("Current pasture update value :" + (regenerationRate - toDecrease));
         this.health += regenerationRate - toDecrease;
+        if(this.health < 0){
+            this.health = 0;
+        }
     }
 
 
@@ -114,16 +137,16 @@ public class PastureAgent extends Agent {
             }
         }
 
-        //DEBUG FIXME :- should be deleted
+        //Logging :- for testing
 
-        for (Map.Entry<String, List<Cow>> entry : cowDict.entrySet()) {
+        /*for (Map.Entry<String, List<Cow>> entry : cowDict.entrySet()) {
             String farmer = entry.getKey();
             List<Cow> cowList = entry.getValue();
             System.out.println("Cows for farmer " + farmer + ":");
             for (Cow cow : cowList) {
                 System.out.println(cow);
             }
-        }
+        }*/
     }
 
     public int getTotalCowsByFarmer(String farmer){

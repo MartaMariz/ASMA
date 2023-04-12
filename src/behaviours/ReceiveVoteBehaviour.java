@@ -13,6 +13,8 @@ import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 import src.agents.FarmerAgent;
 
+import java.util.Random;
+
 public class ReceiveVoteBehaviour extends CyclicBehaviour {
     private final FarmerAgent agent;
     private MessageTemplate mt;
@@ -22,37 +24,83 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
     }
 
     public double calculateScore(FarmerAgent.Personality personality, float health, int totalCows, int cowNum){
-        double score = Math.random();
-
+        Random random = new Random();
+        double score = random.nextDouble() + 0.5;
+        double damageToHealthRatio = (0.5 * totalCows) / health;
         switch(personality){
+            //greedy people want to exploit the pasture
+            //they care little about it's health and little about how much cows someone owns
+            //tho they don't advocate for a totalitarianism ownership
             case greedy:
-                score *= 0.9;
-                if (health > 10){
-                    score *= 0.5;
+                score -= 0.1;
+                if (health < 10){
+                    score -= 0.1;
+                }
+
+                if (cowNum > totalCows * 0.9){
+                    score -= 0.3;
+                } else if (cowNum > totalCows * 0.8) {
+                    score -= 0.2;
                 }
                 break;
+                // adaptive people want to smartly exploit the pasture
+                // their priority is the pastures safety, but won't mind giving a little help to other people
             case adaptive:
-                score *= 0.7;
-                if (health > 30) {
-                    score *= 0.5;
+                score -= 0.3;
+
+                if (health <= 30) {
+                    score -= 0.3;
                 }
+
+                if(cowNum >= totalCows * 0.7){
+                    score -= 0.1;
+                }
+
+                else if(cowNum <= totalCows * 0.3){
+                    score += 0.1;
+                }
+
+
                 break;
             case regulated:
-                score *= 0.5;
-                if (health > 50) {
-                    score *= 0.5;
+                score -= 0.3;
+
+                if (health <= 30) {
+                    score -= 0.3;
                 }
+
+                if (cowNum >= totalCows * 0.5){
+                    score -= 0.3;
+                }
+                else if(cowNum <= totalCows * 0.3){
+                    score += 0.3;
+                }
+
                 break;
             case cooperative:
-                score *= 0.3;
-                if (health > 70) {
-                    score *= 0.5;
+                score -= 0.3;
+                if(health <= 30) {
+                    score -= 0.3;
+                }
+                if (cowNum >= totalCows * 0.5) {
+                    score -= 0.6;
+                }
+
+                else if (cowNum <= totalCows * 0.3){
+                    score += 0.6;
                 }
                 break;
             default:
-                score *= 0;
                 break;
         }
+
+        if(damageToHealthRatio > 0.1) {
+            score -= 0.5;
+        }
+        if(damageToHealthRatio > 0.5) {
+            score -= 1.0;
+        }
+
         return score;
     }
 
@@ -60,7 +108,7 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
 
         double score = calculateScore(personality,health,totalCows, cowNum);
         boolean value;
-        value = score < 0.5;
+        value = score > 0;
 
         return value ? "yes" : "no";
     }
