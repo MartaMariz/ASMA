@@ -125,4 +125,11 @@ public class PastureAgent extends Agent {
             }
         }
     }
+
+    public int getTotalCowsByFarmer(String farmer){
+        if(this.cowDict.get(farmer) == null){
+            return 0;
+        }
+        return this.cowDict.get(farmer).size();
+    }
 }

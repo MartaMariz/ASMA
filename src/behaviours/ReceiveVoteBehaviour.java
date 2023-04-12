@@ -121,6 +121,7 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
                 String[] tokens  = msg.getContent().split("/");
 
                 System.out.println(myAgent.getName()+" is starting vote");
+                //here
                 ACLMessage proposal = new ACLMessage(ACLMessage.PROPOSE);
                 AID[] farmerAgents = agent.getFarmerAgents();
                 for (int i = 0; i < farmerAgents.length; ++i) {
