@@ -27,6 +27,7 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
         Random random = new Random();
         double score = random.nextDouble() + 0.5;
         double damageToHealthRatio = (0.5 * totalCows) / health;
+        double cowRatio = totalCows / health;
         switch(personality){
             //greedy people want to exploit the pasture
             //they care little about it's health and little about how much cows someone owns
@@ -99,6 +100,13 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
         }
         if(damageToHealthRatio > 0.5) {
             score -= 1.0;
+        }
+        if(personality == FarmerAgent.Personality.greedy){
+            return score;
+        }
+
+        if(cowRatio >= 0.10){
+            score -= 0.8;
         }
 
         return score;
