@@ -29,7 +29,7 @@ public class PastureBehaviour extends CyclicBehaviour {
 
             if (msg.getPerformative() == ACLMessage.INFORM) {
                 System.out.println(msg.getContent());
-                this.agent.addCow();
+                this.agent.addCow(msg.getSender().getName());
             }
         }
         else{

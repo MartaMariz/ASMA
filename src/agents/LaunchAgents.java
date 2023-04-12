@@ -36,7 +36,7 @@ public class LaunchAgents {
         float regenerationRate = 2.0f;
         float decreaseFactor = 2.0f;
         int pastureTickerTime = 2000;
-        int cowsHealthTicker = 15000;
+        int cowsHealthTicker = 3000;
         args.add(health);
         args.add(regenerationRate);
         args.add(decreaseFactor);

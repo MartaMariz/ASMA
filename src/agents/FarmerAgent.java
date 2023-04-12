@@ -37,8 +37,6 @@ public class FarmerAgent extends Agent {
 
     private int flag = 1;
 
-    private List<Cow> cowList;
-
     public ReceiveVoteBehaviour receiveBehaviour;
 
     /*
@@ -63,16 +61,9 @@ public class FarmerAgent extends Agent {
     }
 
     public int addCow(){
-        Cow cow = new Cow(100.0f);
-        this.cowList.add(cow);
         return 0;
     }
 
-    public void removeDeadCows(List<Cow> deadCows){
-        for(Cow cow: deadCows){
-            this.cowList.remove(cow);
-        }
-    }
 
     public void resetVotes(){
         yesVotes = 0;
@@ -93,8 +84,6 @@ public class FarmerAgent extends Agent {
         Object[] args = this.getArguments();
         this.personality = (Personality) args[0];
         int tickerRate = (int) args[1];
-
-        this.cowList = new ArrayList<Cow>();
 
         // Register the book-selling service in the yellow pages
         DFAgentDescription dfd = new DFAgentDescription();
@@ -175,26 +164,6 @@ public class FarmerAgent extends Agent {
         }});
         receiveBehaviour = new ReceiveVoteBehaviour(this);
         this.addBehaviour(receiveBehaviour);
-
-        int cowsHealthTicker = (int) args[2];
-        float cowsHealthDecreaseRate = (float) args[3];
-        this.addBehaviour(new TickerBehaviour(this,cowsHealthTicker) {
-            @Override
-            protected void onTick() {
-                List<Cow> deadCows = new ArrayList<>();
-                for(Cow cow: cowList){
-                    System.out.println(this.myAgent.getName() + cow);
-                    cow.decreaseCowHealth(cowsHealthDecreaseRate);
-                    if(cow.getHealth() <= 0){
-                        deadCows.add(cow);
-                    }
-                }
-                removeDeadCows(deadCows);
-                if(deadCows.size() > 0){
-
-                }
-            }
-        });
 
         System.out.println("Farmer agent " + getAID().getName() + " is ready.");
 

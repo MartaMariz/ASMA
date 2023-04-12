@@ -1,5 +1,6 @@
 package src.agents;
 
+import agents.Cow;
 import jade.core.Agent;
 import jade.core.behaviours.TickerBehaviour;
 import jade.domain.DFService;
@@ -8,18 +9,22 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
 import src.behaviours.PastureBehaviour;
 
+import java.util.*;
+
 public class PastureAgent extends Agent {
 
     private static final String AGENT_NAME = "PASTURE";
     private float health;
     private float regenerationRate;
     private float decreaseFactor;
-    private int cowNumber;
+
+
+
+    private Hashtable<String, List<Cow>> cowDict;
 
     public PastureAgent(int health, float regenerationRate){
         this.health = health;
         this.regenerationRate = regenerationRate;
-        this.cowNumber = 0;
     }
     public PastureAgent(){}
 
@@ -32,6 +37,7 @@ public class PastureAgent extends Agent {
         this.decreaseFactor = (float) args[2];
         int pastureTickerTime = (int) args[3];
         int cowsHealthTicker = (int) args[4];
+        this.cowDict = new Hashtable<String, List<Cow>>();
 
         // Register the agent with the Yellow Pages service
         DFAgentDescription dfd = new DFAgentDescription();
@@ -73,22 +79,50 @@ public class PastureAgent extends Agent {
     }
 
     public int getCowNumber(){
-        return this.cowNumber;
+        int totalCows = 0;
+        for (List<Cow> cowList: cowDict.values()){
+            totalCows += cowList.size();
+        }
+        return totalCows;
     }
-    public void addCow(){
-        this.cowNumber ++;
-        System.out.println("New number of cows " + this.cowNumber);
+    public void addCow(String farmer){
+        Cow cow = new Cow(100);
+        List<Cow> cowList = cowDict.get(farmer);
+        if (cowList == null){
+            cowList = new ArrayList<>();
+            cowDict.put(farmer, cowList);
+        }
+        cowList.add(cow);
     }
 
     public void updatePastureHealth(){
-        float toDecrease = this.decreaseFactor * this.cowNumber;
+        float toDecrease = this.decreaseFactor * this.getCowNumber();
         System.out.println("Current pasture update value :" + (regenerationRate - toDecrease));
         this.health += regenerationRate - toDecrease;
     }
 
+
     public void updateCowHealth() {
-        if(this.cowNumber <= 0)
-            return;
-        this.cowNumber--;
+        for (List<Cow> cowList : cowDict.values()) {
+            Iterator<Cow> iterator = cowList.iterator();
+            while (iterator.hasNext()) {
+                Cow cow = iterator.next();
+                cow.decreaseCowHealth(10); //FIXME :- make it a parameter
+                if (cow.getHealth() <= 0) {
+                    iterator.remove();
+                }
+            }
+        }
+
+        //DEBUG FIXME :- should be deleted
+
+        for (Map.Entry<String, List<Cow>> entry : cowDict.entrySet()) {
+            String farmer = entry.getKey();
+            List<Cow> cowList = entry.getValue();
+            System.out.println("Cows for farmer " + farmer + ":");
+            for (Cow cow : cowList) {
+                System.out.println(cow);
+            }
+        }
     }
 }
