@@ -34,7 +34,7 @@ public class LaunchAgents {
         //health
         float health = 100.0f;
         float regenerationRate = 2.0f;
-        float decreaseFactor = 2.0f;
+        float decreaseFactor = 0.5f;
         int pastureTickerTime = 2000;
         int cowsHealthTicker = 3000;
         args.add(health);

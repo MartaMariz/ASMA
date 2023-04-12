@@ -83,6 +83,7 @@ public class FarmerAgent extends Agent {
     public void setup() {
         Object[] args = this.getArguments();
         this.personality = (Personality) args[0];
+        System.out.println("I'm a " + this.personality);
         int tickerRate = (int) args[1];
 
         // Register the book-selling service in the yellow pages

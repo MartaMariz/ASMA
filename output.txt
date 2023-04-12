@@ -1,0 +1,826 @@
+Current Pasture Health: 102.0
+Current Pasture Health: 104.0
+Current Pasture Health: 105.0
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 90.0health.
+Current Pasture Health: 106.0
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 90.0health.
+Current Pasture Health: 106.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 80.0health.
+Current Pasture Health: 106.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Current Pasture Health: 105.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 80.0health.
+Cow with 100.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Cow with 80.0health.
+Cow with 100.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Current Pasture Health: 104.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 70.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Current Pasture Health: 102.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 60.0health.
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Current Pasture Health: 100.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 60.0health.
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Current Pasture Health: 97.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 70.0health.
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 50.0health.
+Cow with 70.0health.
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Current Pasture Health: 94.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 60.0health.
+Cow with 70.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 40.0health.
+Cow with 60.0health.
+Cow with 70.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Current Pasture Health: 91.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 60.0health.
+Cow with 70.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 40.0health.
+Cow with 60.0health.
+Cow with 70.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Current Pasture Health: 88.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 50.0health.
+Cow with 60.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cow with 50.0health.
+Cow with 60.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Current Pasture Health: 85.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 40.0health.
+Cow with 50.0health.
+Cow with 60.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cow with 40.0health.
+Cow with 50.0health.
+Cow with 60.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Current Pasture Health: 82.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 40.0health.
+Cow with 50.0health.
+Cow with 60.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cow with 40.0health.
+Cow with 50.0health.
+Cow with 60.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Current Pasture Health: 79.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 30.0health.
+Cow with 40.0health.
+Cow with 50.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 30.0health.
+Cow with 40.0health.
+Cow with 50.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 90.0health.
+Current Pasture Health: 78.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cow with 40.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cow with 40.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 80.0health.
+Current Pasture Health: 75.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cow with 40.0health.
+Cow with 100.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cow with 40.0health.
+Cow with 100.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 80.0health.
+Current Pasture Health: 73.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cow with 30.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cow with 30.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Current Pasture Health: 71.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 90.0health.
+Current Pasture Health: 69.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 90.0health.
+Current Pasture Health: 68.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 80.0health.
+Current Pasture Health: 68.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 70.0health.
+Current Pasture Health: 67.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 100.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 70.0health.
+Cow with 100.0health.
+Current Pasture Health: 66.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 60.0health.
+Cow with 90.0health.
+Current Pasture Health: 63.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 50.0health.
+Cow with 80.0health.
+Cow with 90.0health.
+Current Pasture Health: 61.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 50.0health.
+Cow with 80.0health.
+Cow with 90.0health.
+Current Pasture Health: 58.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 70.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 40.0health.
+Cow with 70.0health.
+Cow with 80.0health.
+Current Pasture Health: 55.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 70.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 60.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 60.0health.
+Cow with 70.0health.
+Current Pasture Health: 52.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 70.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 60.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 60.0health.
+Cow with 70.0health.
+Cow with 100.0health.
+Current Pasture Health: 49.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 60.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 50.0health.
+Cow with 60.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 50.0health.
+Cow with 60.0health.
+Cow with 90.0health.
+Current Pasture Health: 47.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 60.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 50.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 40.0health.
+Cow with 50.0health.
+Cow with 80.0health.
+Current Pasture Health: 44.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 60.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 50.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 40.0health.
+Cow with 50.0health.
+Cow with 80.0health.
+Current Pasture Health: 42.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 50.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 40.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 40.0health.
+Cow with 70.0health.
+Current Pasture Health: 40.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 40.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cow with 60.0health.
+Current Pasture Health: 38.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 40.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cow with 60.0health.
+Cow with 100.0health.
+Current Pasture Health: 35.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cow with 60.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cow with 50.0health.
+Cow with 90.0health.
+Current Pasture Health: 34.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cow with 50.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 40.0health.
+Cow with 80.0health.
+Current Pasture Health: 32.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cow with 50.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 40.0health.
+Cow with 80.0health.
+Current Pasture Health: 32.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 40.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 70.0health.
+Current Pasture Health: 33.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 60.0health.
+Current Pasture Health: 33.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 100.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 60.0health.
+Current Pasture Health: 33.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 50.0health.
+Current Pasture Health: 32.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Current Pasture Health: 32.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Current Pasture Health: 31.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 90.0health.
+Current Pasture Health: 31.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 80.0health.
+Current Pasture Health: 30.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 80.0health.
+Current Pasture Health: 30.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 60.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 70.0health.
+Current Pasture Health: 29.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 50.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 90.0health.
+Current Pasture Health: 29.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 50.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 90.0health.
+Current Pasture Health: 28.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 40.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 80.0health.
+Current Pasture Health: 28.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 70.0health.
+Current Pasture Health: 27.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 70.0health.
+Current Pasture Health: 27.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 60.0health.
+Current Pasture Health: 26.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 50.0health.
+Cow with 90.0health.
+Current Pasture Health: 26.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 50.0health.
+Cow with 90.0health.
+Current Pasture Health: 26.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 40.0health.
+Cow with 80.0health.
+Current Pasture Health: 27.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 70.0health.
+Current Pasture Health: 28.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 100.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 70.0health.
+Current Pasture Health: 28.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 60.0health.
+Current Pasture Health: 28.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 50.0health.
+Current Pasture Health: 28.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 80.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 50.0health.
+Current Pasture Health: 29.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Current Pasture Health: 29.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Current Pasture Health: 30.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Current Pasture Health: 29.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 60.0health.
+Cow with 100.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 100.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Current Pasture Health: 29.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 50.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Current Pasture Health: 28.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 50.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Current Pasture Health: 28.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 40.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 80.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 28.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Cow with 100.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 27.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 30.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Cow with 100.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 27.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 20.0health.
+Cow with 60.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 27.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 50.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 27.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 50.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 27.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 70.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 27.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 100.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 60.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 27.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 100.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cow with 60.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 27.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cow with 50.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 27.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 40.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 27.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cow with 40.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 28.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 70.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 30.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 29.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 100.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 29.5
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 60.0health.
+Cow with 100.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 20.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 30.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 50.0health.
+Cow with 90.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cow with 10.0health.
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
+Current Pasture Health: 31.0
+Cows for farmer FarmerAgent1@192.168.1.67:1099/JADE:
+Cow with 40.0health.
+Cow with 80.0health.
+Cows for farmer FarmerAgent0@192.168.1.67:1099/JADE:
+Cows for farmer FarmerAgent2@192.168.1.67:1099/JADE:
