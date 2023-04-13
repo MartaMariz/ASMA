@@ -124,23 +124,12 @@ public class PastureAgent extends Agent {
             Iterator<Cow> iterator = cowList.iterator();
             while (iterator.hasNext()) {
                 Cow cow = iterator.next();
-                cow.decreaseCowHealth(20); //FIXME :- make it a parameter was 10 btw
+                cow.decreaseCowHealth(20); //cows health decay
                 if (cow.getHealth() <= 0) {
                     iterator.remove();
                 }
             }
         }
-
-        //Logging :- for testing
-
-        /*for (Map.Entry<String, List<Cow>> entry : cowDict.entrySet()) {
-            String farmer = entry.getKey();
-            List<Cow> cowList = entry.getValue();
-            System.out.println("Cows for farmer " + farmer + ":");
-            for (Cow cow : cowList) {
-                System.out.println(cow);
-            }
-        }*/
     }
 
     public int getTotalCowsByFarmer(String farmer){

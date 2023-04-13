@@ -39,7 +39,6 @@ public class Main {
         }
 
         pastureController = containerController.createNewAgent("pastureController", "src.agents.PastureAgent", pastureArgs);
-        //launchAgents.setPastureController(pastureController);
         pastureController.start();
 
 

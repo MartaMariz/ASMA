@@ -36,11 +36,6 @@ public class FarmerAgent extends Agent {
 
     public ReceiveVoteBehaviour receiveBehaviour;
 
-    /*
-    public FarmerAgent(int greed){
-        this.greed = greed;
-    }
-     */
     public void voteYes(){
         yesVotes++;
     }

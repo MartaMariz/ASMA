@@ -26,12 +26,9 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
     public double calculateScore(FarmerAgent.Personality personality, float health, int totalCows, int cowNum){
         Random random = new Random();
         double score = random.nextDouble() + 0.5;
-        double damageToHealthRatio = (10 * totalCows) / health; //CHANGE 0.5
+        double damageToHealthRatio = (10 * totalCows) / health;
         double cowRatio = totalCows / health;
         switch(personality){
-            //greedy people want to exploit the pasture
-            //they care little about it's health and little about how much cows someone owns
-            //tho they don't advocate for a totalitarianism ownership
             case greedy:
                 score -= 0.1;
                 if (health < 10){
@@ -44,8 +41,6 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
                     score -= 0.2;
                 }
                 break;
-                // adaptive people want to smartly exploit the pasture
-                // their priority is the pastures safety, but won't mind giving a little help to other people
             case adaptive:
                 score -= 0.3;
 
@@ -130,7 +125,6 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
     }
 
     public void action() {
-        //mt = MessageTemplate.MatchConversationId("voting");
         ACLMessage msg = myAgent.receive();
 
         int decision = countVotes();
@@ -185,7 +179,6 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
                 String[] tokens  = msg.getContent().split("/");
 
                 System.out.println(myAgent.getName()+" is starting vote");
-                //here
                 ACLMessage proposal = new ACLMessage(ACLMessage.PROPOSE);
                 AID[] farmerAgents = agent.getFarmerAgents();
                 for (int i = 0; i < farmerAgents.length; ++i) {
