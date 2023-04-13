@@ -31,9 +31,6 @@ public class FarmerAgent extends Agent {
     private int yesVotes = 0;
     private int noVotes = 0;
 
-    private int greed;
-    private Map<String, Integer> cows;
-    private Map<Integer, Integer> pastVotes;
 
     private int flag = 1;
 
@@ -124,14 +121,13 @@ public class FarmerAgent extends Agent {
                     DFAgentDescription[] result = DFService.search(myAgent, pasture_template);
                     if (result.length > 0) {
                         AID agentID = result[0].getName();
-                        System.out.println( myAgent.getName() + " Found agent " + agentID.getName() + " using Yellow Pages");
 
                         // Send a message to the registered agent
                         // Here we are assuming that the registered agent has a behaviour that can handle this message
                         ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
                         msg.addReceiver(agentID);
                         msg.setReplyWith("pasture info" + System.currentTimeMillis()); // Unique value
-                        msg.setContent("Hello pasture from AnotherAgent");
+                        msg.setContent("status_request");
                         myAgent.send(msg);
                     } else {
                         System.out.println("No agents found");

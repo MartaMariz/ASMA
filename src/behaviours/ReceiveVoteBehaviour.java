@@ -130,7 +130,6 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
             agent.resetVotes();
         }
         if(decision == 2){
-            System.out.println("cow approved sending inform to pasture of new cow ");
             //sending request for new cow to pasture
             DFAgentDescription pasture_template = new DFAgentDescription();
             ServiceDescription sd = new ServiceDescription();

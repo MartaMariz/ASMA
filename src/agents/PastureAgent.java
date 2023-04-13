@@ -24,12 +24,6 @@ public class PastureAgent extends Agent {
 
     private Hashtable<String, List<Cow>> cowDict;
 
-    public PastureAgent(int health, float regenerationRate){
-        this.health = health;
-        this.regenerationRate = regenerationRate;
-    }
-    public PastureAgent(){}
-
 
     public void setup() {
         System.out.println("Hello world!");
