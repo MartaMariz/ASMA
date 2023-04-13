@@ -124,7 +124,7 @@ public class PastureAgent extends Agent {
             Iterator<Cow> iterator = cowList.iterator();
             while (iterator.hasNext()) {
                 Cow cow = iterator.next();
-                cow.decreaseCowHealth(10); //FIXME :- make it a parameter
+                cow.decreaseCowHealth(20); //FIXME :- make it a parameter was 10 btw
                 if (cow.getHealth() <= 0) {
                     iterator.remove();
                 }

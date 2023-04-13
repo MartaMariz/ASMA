@@ -31,7 +31,7 @@ public class Main {
         LaunchAgents launchAgents = new LaunchAgents();
 
         Object[] pastureArgs = launchAgents.createPastureArguments();
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < 10; i++){
             Object[] farmerArgs = launchAgents.createAgentArguments();
             AgentController agentController = containerController.createNewAgent("FarmerAgent" + i , "src.agents.FarmerAgent", farmerArgs);
             farmerAgents.add(agentController);

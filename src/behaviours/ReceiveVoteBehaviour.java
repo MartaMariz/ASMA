@@ -26,7 +26,7 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
     public double calculateScore(FarmerAgent.Personality personality, float health, int totalCows, int cowNum){
         Random random = new Random();
         double score = random.nextDouble() + 0.5;
-        double damageToHealthRatio = (0.5 * totalCows) / health;
+        double damageToHealthRatio = (10 * totalCows) / health; //CHANGE 0.5
         double cowRatio = totalCows / health;
         switch(personality){
             //greedy people want to exploit the pasture
@@ -77,6 +77,10 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
                     score += 0.3;
                 }
 
+                if (health < 1500){
+                    score -= 0.5;
+                }
+
                 break;
             case cooperative:
                 score -= 0.3;
@@ -105,7 +109,11 @@ public class ReceiveVoteBehaviour extends CyclicBehaviour {
             return score;
         }
 
-        if(cowRatio >= 0.10){
+        if(cowRatio >= 0.005){
+            score -= 0.8;
+        }
+
+        if(health < 1000){
             score -= 0.8;
         }
 
