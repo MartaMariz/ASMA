@@ -1,6 +1,4 @@
-.idea
-out
-production
+.idea/
+out/
 APDescription.txt
-ASMA.iml
 MTPs-Main-Container.txt

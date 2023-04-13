@@ -29,17 +29,16 @@ public class Main {
 
         List<AgentController> farmerAgents = new ArrayList();
         LaunchAgents launchAgents = new LaunchAgents();
-        Object[] farmerArgs = launchAgents.createAgentArguments();
 
-        Object[] agentArgs = new Object[0];
-        for(int i = 0; i < 3; i++){
+        Object[] pastureArgs = launchAgents.createPastureArguments();
+        for(int i = 0; i < 10; i++){
+            Object[] farmerArgs = launchAgents.createAgentArguments();
             AgentController agentController = containerController.createNewAgent("FarmerAgent" + i , "src.agents.FarmerAgent", farmerArgs);
             farmerAgents.add(agentController);
             agentController.start();
         }
 
-        pastureController = containerController.createNewAgent("pastureController", "src.agents.PastureAgent", agentArgs);
-        //launchAgents.setPastureController(pastureController);
+        pastureController = containerController.createNewAgent("pastureController", "src.agents.PastureAgent", pastureArgs);
         pastureController.start();
 
 
